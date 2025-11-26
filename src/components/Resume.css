@@ -1,0 +1,356 @@
+.resume {
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  background: #0a0a0a;
+}
+
+.resume-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.download-resume {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0 4rem;
+  flex-wrap: wrap;
+}
+
+.view-cv-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.view-cv-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.view-cv-btn:hover::before {
+  left: 0;
+}
+
+.view-cv-btn svg,
+.view-cv-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.view-cv-btn:hover {
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+}
+
+.view-cv-btn:active {
+  transform: translateY(-1px);
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.download-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.download-btn:hover {
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+  transform: translateY(-3px);
+}
+
+.download-btn:active {
+  transform: translateY(-1px);
+}
+
+.download-btn svg,
+.download-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.resume-section {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-icon {
+  font-size: 2rem;
+  color: #667eea;
+}
+
+.section-header h3 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.4rem;
+  top: 0.3rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+}
+
+.timeline-content h4 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-place {
+  color: #667eea;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-period {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.timeline-desc {
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+/* Certifications */
+.certifications-section {
+  margin-bottom: 4rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.cert-card:hover {
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.cert-icon {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.cert-card h4 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.cert-issuer {
+  color: #667eea;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.cert-year {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+/* Hobbies */
+.hobbies-section {
+  margin-bottom: 4rem;
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hobby-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hobby-card:hover {
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.hobby-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.hobby-card h4 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.hobby-card p {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+}
+
+/* Fun Facts */
+.funfacts-section {
+  margin-bottom: 2rem;
+}
+
+.funfacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.fact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-radius: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.fact-item:hover {
+  border-color: rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.fact-bullet {
+  color: #667eea;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.fact-item p {
+  color: #b0b0b0;
+  line-height: 1.6;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hobbies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  
+  .funfacts-grid {
+    grid-template-columns: 1fr;
+  }
+}
