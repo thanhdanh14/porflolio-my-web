@@ -6,10 +6,14 @@ const Snowfall = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+    
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
     
     // Set canvas size
     const resizeCanvas = () => {
+      if (typeof window === 'undefined') return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
