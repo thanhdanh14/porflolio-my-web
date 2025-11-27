@@ -1,7 +1,7 @@
 .code-showcase {
   min-height: 100vh;
   padding: 5rem 2rem;
-  background: #0a0a0a;
+  background: var(--bg-primary);
 }
 
 .code-container {
@@ -42,7 +42,7 @@
   background: rgba(102, 126, 234, 0.1);
   border: 1px solid rgba(102, 126, 234, 0.2);
   border-radius: 50px;
-  color: #b0b0b0;
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -80,17 +80,17 @@
 
 .code-info h3 {
   font-size: 1.8rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .code-info p {
-  color: #b0b0b0;
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
 
 .code-block {
-  background: #1a1a1a;
+  background: var(--code-bg);
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid rgba(102, 126, 234, 0.3);
@@ -101,7 +101,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: #0d0d0d;
+  background: var(--code-bg);
   border-bottom: 1px solid rgba(102, 126, 234, 0.2);
 }
 
@@ -168,7 +168,7 @@
   font-family: 'Courier New', 'Monaco', monospace;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #e0e0e0;
+  color: var(--code-text);
   white-space: pre;
 }
 
@@ -178,7 +178,7 @@
 }
 
 .code-block pre::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: var(--code-bg);
 }
 
 .code-block pre::-webkit-scrollbar-thumb {

@@ -29,11 +29,11 @@ const Skills = () => {
     { icon: <FaReact />, color: '#61DAFB', name: 'React' },
     { icon: <FaNodeJs />, color: '#339933', name: 'Node.js' },
     { icon: <SiTypescript />, color: '#3178C6', name: 'TypeScript' },
-    { icon: <SiNextdotjs />, color: '#ffffff', name: 'Next.js' },
+    { icon: <SiNextdotjs />, color: '#000000', darkColor: '#ffffff', name: 'Next.js' },
     { icon: <SiMongodb />, color: '#47A248', name: 'MongoDB' },
     { icon: <SiPostgresql />, color: '#4169E1', name: 'PostgreSQL' },
     { icon: <SiTailwindcss />, color: '#06B6D4', name: 'Tailwind' },
-    { icon: <SiExpress />, color: '#ffffff', name: 'Express' },
+    { icon: <SiExpress />, color: '#000000', darkColor: '#ffffff', name: 'Express' },
     { icon: <FaPython />, color: '#3776AB', name: 'Python' },
     { icon: <SiGraphql />, color: '#E10098', name: 'GraphQL' },
     { icon: <FaDocker />, color: '#2496ED', name: 'Docker' },
@@ -88,7 +88,10 @@ const Skills = () => {
                   whileHover={{ scale: 1.2, y: -10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="logo-icon" style={{ color: item.color }}>
+                  <div 
+                    className={`logo-icon ${item.darkColor ? 'dark-logo' : ''}`} 
+                    style={{ color: item.color }}
+                  >
                     {item.icon}
                   </div>
                   <span className="logo-name">{item.name}</span>

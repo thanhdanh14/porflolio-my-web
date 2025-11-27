@@ -1,7 +1,7 @@
 .skills {
   min-height: 100vh;
   padding: 5rem 2rem;
-  background: #0a0a0a;
+  background: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,12 +33,12 @@
 
 .logo-carousel-wrapper::before {
   left: 0;
-  background: linear-gradient(90deg, #0a0a0a 0%, transparent 100%);
+  background: linear-gradient(90deg, var(--bg-primary) 0%, transparent 100%);
 }
 
 .logo-carousel-wrapper::after {
   right: 0;
-  background: linear-gradient(270deg, #0a0a0a 0%, transparent 100%);
+  background: linear-gradient(270deg, var(--bg-primary) 0%, transparent 100%);
 }
 
 .logo-carousel {
@@ -83,8 +83,26 @@
   transition: all 0.3s ease;
 }
 
+/* Make black logos (Express, Next.js) visible in dark theme */
+[data-theme="dark"] .logo-icon.dark-logo {
+  filter: drop-shadow(0 0 20px #ffffff) invert(1);
+}
+
+[data-theme="dark"] .logo-item:hover .logo-icon.dark-logo {
+  filter: drop-shadow(0 0 30px #ffffff) invert(1);
+}
+
+/* Make white logos visible in light theme */
+[data-theme="light"] .logo-icon {
+  filter: drop-shadow(0 0 20px currentColor) contrast(0.8) brightness(0.4);
+}
+
 .logo-item:hover .logo-icon {
   filter: drop-shadow(0 0 30px currentColor);
+}
+
+[data-theme="light"] .logo-item:hover .logo-icon {
+  filter: drop-shadow(0 0 30px currentColor) contrast(0.8) brightness(0.4);
 }
 
 .logo-name {
@@ -97,7 +115,7 @@
 
 .logo-item:hover .logo-name {
   opacity: 1;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .skills-grid {
@@ -195,7 +213,7 @@
 .skill-card h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .skill-bar {

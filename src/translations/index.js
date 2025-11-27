@@ -104,6 +104,8 @@ const translations = {
       phoneText: 'Liên hệ qua email',
       address: 'Địa chỉ',
       addressText: 'Việt Nam',
+      facebook: 'Kết nối Facebook',
+      scanQR: 'Quét mã để kết nối',
       form: {
         name: 'Tên của bạn',
         email: 'Email của bạn',
@@ -252,6 +254,8 @@ const translations = {
       phoneText: 'Contact via email',
       address: 'Address',
       addressText: 'Vietnam',
+      facebook: 'Connect on Facebook',
+      scanQR: 'Scan to connect',
       form: {
         name: 'Your Name',
         email: 'Your Email',
@@ -400,6 +404,8 @@ const translations = {
       phoneText: '이메일로 연락',
       address: '주소',
       addressText: '베트남',
+      facebook: 'Facebook 연결',
+      scanQR: '스캔하여 연결',
       form: {
         name: '이름',
         email: '이메일',
@@ -548,6 +554,8 @@ const translations = {
       phoneText: 'メールでお問い合わせ',
       address: '住所',
       addressText: 'ベトナム',
+      facebook: 'Facebookで繋がる',
+      scanQR: 'スキャンして接続',
       form: {
         name: 'お名前',
         email: 'メールアドレス',
@@ -696,6 +704,8 @@ const translations = {
       phoneText: 'Kontakt per E-Mail',
       address: 'Adresse',
       addressText: 'Vietnam',
+      facebook: 'Auf Facebook verbinden',
+      scanQR: 'Scannen zum Verbinden',
       form: {
         name: 'Ihr Name',
         email: 'Ihre E-Mail',

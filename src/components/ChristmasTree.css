@@ -1,0 +1,240 @@
+.christmas-tree-container {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+}
+
+.christmas-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.4));
+}
+
+.star {
+  font-size: 3.5rem;
+  margin-bottom: 5px;
+  z-index: 15;
+  filter: drop-shadow(0 0 20px gold) drop-shadow(0 0 40px gold);
+}
+
+.tree-svg {
+  width: 280px;
+  height: 350px;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+.tree-svg polygon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.tree-svg rect {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.tree-svg circle {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Christmas lights */
+.light {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px currentColor, 0 0 50px currentColor;
+  z-index: 12;
+}
+
+.light-red {
+  background: radial-gradient(circle, #ff6b6b 0%, #ff0000 100%);
+  color: #ff0000;
+}
+
+.light-yellow {
+  background: radial-gradient(circle, #ffff99 0%, #ffff00 100%);
+  color: #ffff00;
+}
+
+.light-blue {
+  background: radial-gradient(circle, #87ceeb 0%, #00bfff 100%);
+  color: #00bfff;
+}
+
+.light-green {
+  background: radial-gradient(circle, #90ee90 0%, #00ff00 100%);
+  color: #00ff00;
+}
+
+.light-pink {
+  background: radial-gradient(circle, #ffb6c1 0%, #ff1493 100%);
+  color: #ff1493;
+}
+
+.light-orange {
+  background: radial-gradient(circle, #ffa07a 0%, #ff4500 100%);
+  color: #ff4500;
+}
+
+.light-purple {
+  background: radial-gradient(circle, #dda0dd 0%, #9370db 100%);
+  color: #9370db;
+}
+
+.light-cyan {
+  background: radial-gradient(circle, #afeeee 0%, #00ced1 100%);
+  color: #00ced1;
+}
+
+/* Light positions - adjusted for SVG tree */
+.light-1 {
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.light-2 {
+  top: 130px;
+  left: 38%;
+}
+
+.light-3 {
+  top: 135px;
+  right: 36%;
+}
+
+.light-4 {
+  top: 175px;
+  left: 30%;
+}
+
+.light-5 {
+  top: 180px;
+  right: 28%;
+}
+
+.light-6 {
+  top: 220px;
+  left: 22%;
+}
+
+.light-7 {
+  top: 225px;
+  right: 20%;
+}
+
+.light-8 {
+  top: 210px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.light-9 {
+  top: 260px;
+  left: 35%;
+}
+
+.light-10 {
+  top: 265px;
+  right: 33%;
+}
+
+/* Gifts under tree */
+.gifts {
+  position: absolute;
+  bottom: 70px;
+  display: flex;
+  gap: 15px;
+  z-index: 11;
+}
+
+.gift {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.gift-1 {
+  transform: translateY(-5px);
+}
+
+.gift-2 {
+  font-size: 2rem;
+}
+
+.gift-3 {
+  transform: translateY(-3px);
+  font-size: 2.2rem;
+}
+
+/* Toggle button */
+.lights-toggle {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+  backdrop-filter: blur(15px);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(102, 126, 234, 0.6);
+  z-index: 20;
+}
+
+.lights-toggle:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 1) 0%, rgba(118, 75, 162, 1) 100%);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 50px rgba(102, 126, 234, 0.9);
+  transform: translateX(-50%) translateY(-5px) scale(1.1);
+}
+
+/* Only show in dark theme */
+[data-theme="light"] .christmas-tree-container {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .christmas-tree-container {
+    transform: scale(0.85);
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .christmas-tree-container {
+    bottom: 15px;
+    right: 10px;
+    transform: scale(0.6);
+  }
+  
+  .lights-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .christmas-tree-container {
+    bottom: 10px;
+    right: 5px;
+    transform: scale(0.45);
+  }
+  
+  .lights-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+}

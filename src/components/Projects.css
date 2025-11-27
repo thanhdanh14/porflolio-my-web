@@ -183,7 +183,7 @@
 }
 
 .project-link {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 2rem;
   transition: color 0.3s ease;
 }
@@ -199,7 +199,7 @@
 .project-content h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .project-content p {

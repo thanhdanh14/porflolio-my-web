@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { useLanguage } from '../contexts/LanguageContext';
+import ChristmasTree from './ChristmasTree';
 import './Hero.css';
 
 const Hero = () => {
@@ -173,6 +174,8 @@ const Hero = () => {
           />
         ))}
       </div>
+
+      <ChristmasTree />
     </section>
   );
 };

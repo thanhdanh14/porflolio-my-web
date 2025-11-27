@@ -1,7 +1,7 @@
 .favorite-music {
   min-height: 100vh;
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -43,7 +43,7 @@
 
 .music-subtitle {
   font-size: 1.2rem;
-  color: #b0b0b0;
+  color: var(--text-secondary);
   margin-top: 1rem;
 }
 
@@ -116,7 +116,7 @@
 
 .music-info h3 {
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 

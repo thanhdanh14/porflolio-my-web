@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook } from 'react-icons/fa';
 import { useLanguage } from '../contexts/LanguageContext';
 import CopyEmailButton from './CopyEmailButton';
 import './Contact.css';
@@ -132,6 +132,26 @@ const Contact = () => {
                 </div>
               </motion.div>
             </div>
+
+            {/* Facebook QR Code */}
+            <motion.div 
+              className="qr-code-section"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+            >
+              <h4>
+                <FaFacebook className="fb-icon" />
+                {t('contact.facebook') || 'Kết nối Facebook'}
+              </h4>
+              <div className="qr-code-wrapper">
+                <img 
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.facebook.com/thanhdanh010499" 
+                  alt="Facebook QR Code"
+                  className="qr-code-image"
+                />
+                <p className="qr-code-text">{t('contact.scanQR') || 'Quét mã để kết nối'}</p>
+              </div>
+            </motion.div>
           </motion.div>
 
           <motion.form 

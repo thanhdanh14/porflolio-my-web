@@ -1,7 +1,7 @@
 .contact {
   min-height: 100vh;
   padding: 5rem 2rem;
-  background: #0a0a0a;
+  background: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,11 +64,11 @@
 .info-item h4 {
   font-size: 1.1rem;
   margin-bottom: 0.3rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .info-item p {
-  color: #a0a0a0;
+  color: var(--text-secondary);
 }
 
 .contact-form {
@@ -85,10 +85,10 @@
 .form-group textarea {
   width: 100%;
   padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--input-bg);
   border: 1px solid rgba(102, 126, 234, 0.2);
   border-radius: 10px;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
@@ -174,9 +174,78 @@
   50% { box-shadow: 0 0 60px rgba(102, 126, 234, 0.8); }
 }
 
+/* QR Code Section */
+.qr-code-section {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.qr-code-section:hover {
+  border-color: rgba(102, 126, 234, 0.6);
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+}
+
+.qr-code-section h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.fb-icon {
+  color: #1877f2;
+  font-size: 1.5rem;
+}
+
+.qr-code-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qr-code-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.qr-code-section:hover .qr-code-image {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.qr-code-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  
+  .qr-code-section {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .qr-code-image {
+    width: 180px;
+    height: 180px;
   }
 }

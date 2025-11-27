@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import ScrollProgress from './components/ScrollProgress';
@@ -6,6 +7,7 @@ import FloatingShapes from './components/FloatingShapes';
 import MouseSpotlight from './components/MouseSpotlight';
 import ScrollToTop from './components/ScrollToTop';
 import EasterEgg from './components/EasterEgg';
+import Snowfall from './components/Snowfall';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -39,6 +41,7 @@ function App() {
   return (
     <LanguageProvider>
       <div className="App">
+        <Snowfall />
         <MouseSpotlight />
         <FloatingShapes />
         <ScrollProgress />
@@ -55,6 +58,7 @@ function App() {
         <Footer />
         <ScrollToTop />
         <EasterEgg />
+        <Analytics />
       </div>
     </LanguageProvider>
   );
