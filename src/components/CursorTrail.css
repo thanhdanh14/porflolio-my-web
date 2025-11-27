@@ -1,0 +1,84 @@
+.cursor-dot {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+}
+
+.cursor-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-image: url('/src/assets/Capture.PNG');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: catWiggle 0.5s ease-in-out infinite;
+  mix-blend-mode: multiply;
+  filter: contrast(1.2) brightness(1.1);
+}
+
+@keyframes catWiggle {
+  0%, 100% { 
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  50% { 
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  animation: fadeOutPaw 1s ease-out forwards;
+}
+
+.cursor-trail::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-image: url('/src/assets/paw.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@keyframes fadeOutPaw {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5) rotate(-20deg);
+  }
+}
+
+/* Hide on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-trail {
+    display: none;
+  }
+}
+
+/* Disable on mobile */
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-trail {
+    display: none;
+  }
+}

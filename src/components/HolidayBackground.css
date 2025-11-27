@@ -1,0 +1,142 @@
+.holiday-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.pattern-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Background colors for each theme */
+.hero.normal-bg {
+  background: linear-gradient(135deg, 
+    rgba(245, 222, 179, 0.1) 0%, 
+    rgba(218, 165, 32, 0.1) 50%,
+    rgba(139, 69, 19, 0.1) 100%
+  ) !important;
+}
+
+.hero.christmas-bg {
+  background: linear-gradient(135deg, 
+    rgba(0, 100, 0, 0.1) 0%, 
+    rgba(34, 139, 34, 0.1) 50%,
+    rgba(0, 50, 0, 0.1) 100%
+  ) !important;
+}
+
+.hero.tet-bg {
+  background: linear-gradient(135deg, 
+    rgba(255, 215, 0, 0.1) 0%, 
+    rgba(255, 140, 0, 0.1) 50%,
+    rgba(220, 20, 60, 0.1) 100%
+  ) !important;
+}
+
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.15;
+  animation: float 20s ease-in-out infinite;
+}
+
+/* Christmas theme - brighter */
+.christmas-theme .floating-element {
+  opacity: 0.2;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.3));
+}
+
+/* Tet theme - golden glow */
+.tet-theme .floating-element {
+  opacity: 0.2;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+}
+
+/* Normal theme - subtle */
+.normal-theme .floating-element {
+  opacity: 0.1;
+  filter: drop-shadow(0 0 10px rgba(139, 69, 19, 0.3));
+}
+
+.element-1 {
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.element-2 {
+  top: 20%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+.element-3 {
+  bottom: 30%;
+  left: 10%;
+  animation-delay: 4s;
+}
+
+.element-4 {
+  bottom: 20%;
+  right: 15%;
+  animation-delay: 6s;
+}
+
+.element-5 {
+  top: 50%;
+  left: 5%;
+  animation-delay: 8s;
+}
+
+.element-6 {
+  top: 40%;
+  right: 10%;
+  animation-delay: 10s;
+}
+
+.element-7 {
+  top: 70%;
+  left: 25%;
+  animation-delay: 12s;
+}
+
+.element-8 {
+  top: 60%;
+  right: 30%;
+  animation-delay: 14s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(20px) rotate(-5deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-element {
+    font-size: 2.5rem;
+  }
+}

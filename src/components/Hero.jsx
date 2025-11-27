@@ -2,11 +2,15 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useHoliday } from '../contexts/HolidayContext';
 import ChristmasTree from './ChristmasTree';
+import TetTree from './TetTree';
+import HolidayBackground from './HolidayBackground';
 import './Hero.css';
 
 const Hero = () => {
   const { t } = useLanguage();
+  const { holidayTheme } = useHoliday();
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -175,7 +179,9 @@ const Hero = () => {
         ))}
       </div>
 
-      <ChristmasTree />
+      <HolidayBackground />
+      {holidayTheme === 'christmas' && <ChristmasTree />}
+      {holidayTheme === 'tet' && <TetTree />}
     </section>
   );
 };

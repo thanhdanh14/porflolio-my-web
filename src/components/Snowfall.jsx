@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
+import { useHoliday } from '../contexts/HolidayContext';
 import './Snowfall.css';
 
 const Snowfall = () => {
   const canvasRef = useRef(null);
+  const { holidayTheme } = useHoliday();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -51,18 +53,34 @@ const Snowfall = () => {
         }
       }
 
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-        ctx.fill();
-        ctx.closePath();
+      draw(isTet) {
+        if (isTet) {
+          // Draw red envelope emoji 🧧
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.wind * 5);
+          
+          ctx.globalAlpha = this.opacity;
+          ctx.font = `${this.radius * 8}px Arial`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('🧧', 0, 0);
+          
+          ctx.restore();
+        } else {
+          // Draw snowflake
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+          ctx.fill();
+          ctx.closePath();
+        }
       }
     }
 
-    // Create snowflakes
+    // Create snowflakes/red envelopes
     const snowflakes = [];
-    const snowflakeCount = 100;
+    const snowflakeCount = holidayTheme === 'tet' ? 50 : 100; // Less red envelopes
     
     for (let i = 0; i < snowflakeCount; i++) {
       snowflakes.push(new Snowflake());
@@ -72,9 +90,10 @@ const Snowfall = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+      const isTet = holidayTheme === 'tet';
       snowflakes.forEach(snowflake => {
         snowflake.update();
-        snowflake.draw();
+        snowflake.draw(isTet);
       });
 
       requestAnimationFrame(animate);
@@ -85,7 +104,7 @@ const Snowfall = () => {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, []);
+  }, [holidayTheme]);
 
   return <canvas ref={canvasRef} className="snowfall-canvas" />;
 };

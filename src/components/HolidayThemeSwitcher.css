@@ -1,0 +1,85 @@
+.holiday-theme-switcher {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.holiday-theme-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.holiday-theme-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.holiday-theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.holiday-theme-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.holiday-theme-btn.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.theme-icon {
+  font-size: 1.3rem;
+}
+
+.theme-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .holiday-theme-switcher {
+    top: auto;
+    bottom: 150px;
+    right: 15px;
+    padding: 0.8rem;
+  }
+  
+  .holiday-theme-options {
+    gap: 0.4rem;
+  }
+  
+  .holiday-theme-btn {
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .theme-icon {
+    font-size: 1.1rem;
+  }
+  
+  .theme-label {
+    font-size: 0.75rem;
+  }
+}

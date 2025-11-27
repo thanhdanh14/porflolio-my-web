@@ -7,6 +7,7 @@ const translations = {
       projects: 'Dự Án',
       resume: 'Hồ Sơ',
       music: 'Âm Nhạc',
+      blog: 'Blog',
       contact: 'Liên Hệ'
     },
     hero: {
@@ -147,6 +148,13 @@ const translations = {
     github: {
       title: 'Thống Kê GitHub',
       viewProfile: 'Xem Hồ Sơ Đầy Đủ'
+    },
+    blog: {
+      title: 'Blog',
+      subtitle: 'Chia sẻ kiến thức và kinh nghiệm lập trình',
+      readMore: 'Đọc thêm',
+      readFull: 'Đọc bài viết đầy đủ',
+      viewAll: 'Xem tất cả bài viết'
     }
   },
   en: {
@@ -297,6 +305,13 @@ const translations = {
     github: {
       title: 'GitHub Statistics',
       viewProfile: 'View Full Profile'
+    },
+    blog: {
+      title: 'Blog',
+      subtitle: 'Sharing knowledge and coding experiences',
+      readMore: 'Read more',
+      readFull: 'Read full article',
+      viewAll: 'View all posts'
     }
   },
   ko: {
