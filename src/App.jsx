@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import ScrollProgress from './components/ScrollProgress';
@@ -58,7 +58,7 @@ function App() {
         <Footer />
         <ScrollToTop />
         <EasterEgg />
-        {/* <Analytics /> */}
+        <Analytics />
       </div>
     </LanguageProvider>
   );
