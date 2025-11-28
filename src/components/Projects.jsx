@@ -10,18 +10,17 @@ const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Thêm dự án của bạn vào đây
-  // Để trống array nếu chưa có dự án
   const projects = [
-    // Ví dụ format để thêm dự án:
-    // {
-    //   title: 'Tên Dự Án',
-    //   description: 'Mô tả ngắn gọn về dự án',
-    //   tech: ['React', 'Node.js', 'MongoDB'],
-    //   image: 'đường-dẫn-ảnh.jpg',
-    //   github: 'https://github.com/username/repo',
-    //   demo: 'https://demo-link.com'
-    // }
+    {
+      title: 'CV Analyzer',
+      titleVi: 'Phân Tích CV',
+      description: 'AI-powered CV analysis tool that helps job seekers optimize their resumes with intelligent feedback and suggestions.',
+      descriptionVi: 'Công cụ phân tích CV bằng AI giúp người tìm việc tối ưu hóa CV với phản hồi và gợi ý thông minh.',
+      tech: ['React', 'Python', 'AI/ML', 'TypeScript', 'Tailwind CSS'],
+      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80',
+      github: 'https://github.com/thanhdanh14/cv-analyzer',
+      demo: 'https://cv-analyzer-db.vercel.app/'
+    }
   ];
 
   // Nếu chưa có dự án, hiển thị message
@@ -135,27 +134,35 @@ const Projects = () => {
               <div className="project-image">
                 <img src={project.image} alt={project.title} />
                 <div className="project-overlay">
-                  <motion.a 
-                    href={project.github}
-                    className="project-link"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaGithub />
-                  </motion.a>
-                  <motion.a 
-                    href={project.demo}
-                    className="project-link"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaExternalLinkAlt />
-                  </motion.a>
+                  {project.github && (
+                    <motion.a 
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaGithub />
+                    </motion.a>
+                  )}
+                  {project.demo && (
+                    <motion.a 
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaExternalLinkAlt />
+                    </motion.a>
+                  )}
                 </div>
               </div>
               <div className="project-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                <h3>{t('language') === 'vi' && project.titleVi ? project.titleVi : project.title}</h3>
+                <p>{t('language') === 'vi' && project.descriptionVi ? project.descriptionVi : project.description}</p>
                 <div className="project-tech">
                   {project.tech.map((tech, i) => (
                     <span key={i} className="tech-tag">{tech}</span>
